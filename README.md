@@ -2,11 +2,11 @@
 
 E-Commerce API with Golang, Gin, and MongoDB
 
-Overview
+# Overview
 
 This is an e-commerce backend API built using Golang with the Gin framework and MongoDB as the database. The project is containerized using Docker to simplify database setup and ensure a consistent development environment.
 
-Features
+# Features
 
 User Authentication (Signup, Login)
 
@@ -20,7 +20,7 @@ JWT Authentication for security
 
 Docker Compose for MongoDB setup
 
-Project Structure
+# Project Structure
 
 ├── controller     # Business logic (APIs for user, product, cart, etc.)
 ├── database       # MongoDB setup and collections
@@ -31,7 +31,7 @@ Project Structure
 ├── main.go        # Entry point of the application
 ├── docker-compose.yml  # Docker configuration for MongoDB
 
-Setup and Installation
+# Setup and Installation
 
 1. Clone the Repository
 
@@ -55,14 +55,14 @@ go run main.go
 
 API Endpoints
 
-User Routes
+# User Routes
 
 func UserRoutes(incomingRoutes *gin.Engine) {
     incomingRoutes.POST("/users/signup", controller.Signup)
     incomingRoutes.POST("/users/login", controller.Login)
 }
 
-Product Routes
+# Product Routes
 
 func ProductRoutes(incomingRoutes *gin.Engine) {
     incomingRoutes.POST("/admin/addproduct", controller.ProductViewerAdmin)
@@ -70,7 +70,7 @@ func ProductRoutes(incomingRoutes *gin.Engine) {
     incomingRoutes.GET("/users/search", controller.SearchProductByQuery)
 }
 
-Cart Routes
+# Cart Routes
 
 func CartRoutes(router *gin.Engine) {
     router.GET("/addtocart", app.AddToCart)
@@ -80,7 +80,7 @@ func CartRoutes(router *gin.Engine) {
     router.GET("/listcart", controller.GetItemFromCart)
 }
 
-Address Management
+# Address Management
 
 func AddressRoutes(router *gin.Engine) {
     router.POST("/addaddress", controller.AddAddress)
@@ -89,7 +89,7 @@ func AddressRoutes(router *gin.Engine) {
     router.GET("/deleteaddresses", controller.DeleteAddress)
 }
 
-Docker Compose Configuration
+# Docker Compose Configuration
 
 docker-compose.yml
 
@@ -112,19 +112,19 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: testpassword
       ME_CONFIG_MONGODB_URL: mongodb://development:testpassword@mongo:27017/
 
-Notes
+# Notes
 
-MongoDB is containerized: You don’t need to install it manually.
+- MongoDB is containerized: You don’t need to install it manually.
 
-JWT authentication is implemented in the middleware folder.
+- JWT authentication is implemented in the middleware folder.
 
-Controller functions handle business logic, while routes define API endpoints.
+- Controller functions handle business logic, while routes define API endpoints.
 
-To stop Docker containers, run:
+- To stop Docker containers, run:
 
 docker-compose down
 
-Development Status
+# Development Status
 
 This project is still in the development stage. More features, improvements, and documentation updates will be added over time. Contributions and feedback are welcome!
 
