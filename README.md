@@ -22,14 +22,14 @@ Docker Compose for MongoDB setup
 
 # Project Structure
 
-├── controller     # Business logic (APIs for user, product, cart, etc.)
-├── database       # MongoDB setup and collections
-├── middleware     # JWT authentication logic
-├── model          # Data models for MongoDB
-├── routes         # API route definitions
-├── tokens         # JWT token generation and validation
-├── main.go        # Entry point of the application
-├── docker-compose.yml  # Docker configuration for MongoDB
+- ├── controller     # Business logic (APIs for user, product, cart, etc.)
+- ├── database       # MongoDB setup and collections
+- ├── middleware     # JWT authentication logic
+- ├── model          # Data models for MongoDB
+- ├── routes         # API route definitions
+- ├── tokens         # JWT token generation and validation
+- ├── main.go        # Entry point of the application
+- ├── docker-compose.yml  # Docker configuration for MongoDB
 
 # Setup and Installation
 
