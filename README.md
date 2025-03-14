@@ -58,6 +58,33 @@ docker-compose up -d  # Runs MongoDB in a container
 go run main.go
 ```
 
+## Using Air for Live Reloading
+
+Air is a live reloading tool for Go applications.
+
+### Install Air
+```sh
+go install github.com/air-verse/air@latest
+```
+
+### Create an `.air.toml` File
+Create a file named `.air.toml` in your project root and add:
+```toml
+root = "."
+tmp_dir = "tmp"
+[build]
+  cmd = "go build -o tmp/main ."
+  bin = "tmp/main"
+  exclude_dir = ["tmp", "vendor"]
+  include_ext = ["go", "tpl", "tmpl", "html"]
+```
+
+### Run the Server with Air
+```sh
+air
+```
+Now, the server will restart automatically when you make changes.
+
 ## API Endpoints
 
 ### User Routes
